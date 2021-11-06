@@ -75,6 +75,7 @@ header > nav {
     margin-top: -360px;
     margin-right: 200px;
     float: right;
+    cursor: pointer;
 }
 
 @keyframes animacao{

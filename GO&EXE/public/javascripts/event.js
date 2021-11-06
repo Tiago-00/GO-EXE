@@ -29,6 +29,8 @@ function createEventsHTML(eventos) {
         for (let evento of eventos) {
             html+=`<section>
             <h1> ${evento.evento}</h1><br>
+            <br>
+            <input type=button id=evento  value="Ver detalhes">
             </section>`
         }
         document.getElementById("eventos").innerHTML = html;
