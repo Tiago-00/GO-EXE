@@ -2,34 +2,69 @@
 
 <head>
   <title>Learning Platform</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  crossorigin=""/>
+ 
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+crossorigin=""></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/stylesheets/index.css">
+<link rel="stylesheet" href="/stylesheets/location.css">
+<script src="./javascripts/addevent.js"></script>
+<script src="./javascripts/map.js"></script>
   
 </head>
 
 
 <body>
   <header>
-    <nav>
-      <a class="logo" href="/">GO&EXE</a>
+    <nav >
+      <a class="logo" href="/"><img src="images/logo1.png"  class="imagem1"> </a>
       <label for="check">
         <img src="images/menu.png">
       </label> 
       <input type="checkbox" id="check"> 
+     
       <ul class="menu">
-          <li><a href="index.html">Home</a><img src="images/home.png"  class="imagem" ></li>
-          <li><a href="location.html">Location</a><img src="images/local.png"  class="imagem"  ></li>
-          <li><a href="groups.html">Groups</a><img src="images/grupo.png"  class="imagem"  ></li>
-          <li><a href="rewards.html">Rewards</a><img src="images/presente.png"  class="imagem"  ></li>
-          <li><a href="logout.html">Logout  </a><img src="images/logout.png"  class="imagem" ></li>   
-      </ul>
-    </nav>
+          <li><a href="location.html">Mapa</a></li>
+          <li><a href="events.html">Eventos</a></li>
+          <li><a href="shop.html">Loja</a></li>
+          <li><a href="cart.html"><img src="images/carrinho.png"  class="imagem" > </a></li>
+          <li><a href="logout.html"><img src="images/profile1.png"  class="imagem" > </a> </li>       
+      </nav>
+       
   </header>
  
-  <main>
+ <main id="mapa"></main>
 
+
+ 
+  <form>
+  <h2>Nome do Personal Trainer: <input type="text" id="pt"></h2>
+  <h2>Lotação Máxima:</h2><input type="number" id="lotacao" step="1" min="0" max="25">
+  <h2>Início:<input type="time" id="horas"  min="09:00" max="18:00" required></h2>
+  <h2>Termina:<input type="time" id="horasfim"  min="09:00" max="18:00" required></h2>
+  <h2>Local: <input type="text" id="local"></h2>
+ 
+  <h2>Tipo de Evento: <select id="eventos">
+    <option value="1">Caminhada</option>
+    <option value="2">Corrida</option>
+    <option value="3">Yoga</option>
+    <option value="4">Ciclismo</option>
+</select></h2>
     
 
-  </main>
+    <h2>Nome da atividade: <input type="text" id="atividade"></h2>
+  
+
+  <h2><input type="button" value="Adicionar" onclick="addEvent()"></h2>
+</form>
+
+  
+  
   
 </body>
 </html>
