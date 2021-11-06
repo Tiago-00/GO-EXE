@@ -34,10 +34,10 @@ module.exports.getEventosFilteredBy = async function (eventId) {
             params = [eventId];
         }
         let result = await pool.query(sql, params);
-        let products = result.rows;
+        let events = result.rows;
         return {
             status: 200,
-            result: products
+            result: events
         };
     } catch (err) {
         console.log(err);

@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <title>Learning Platform</title>
+    <link rel="stylesheet" href="/stylesheets/index.css">
+    <link rel="stylesheet" href="/stylesheets/addproduct.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="javascripts/addproduct.js"></script>
+
+</head>
+
+
+<body>
+    <header>
+        <nav >
+            <a class="logo" href="/"><img src="images/logo1.png"  class="imagem1"> </a>
+          <label for="check">
+            <img src="images/menu.png">
+          </label> 
+          <input type="checkbox" id="check"> 
+         
+          <ul class="menu">
+              <li><a href="location.html">Mapa</a></li>
+              <li><a href="events.html">Eventos</a></li>
+              <li><a href="shop.html">Loja</a></li>
+              <li><a href="cart.html"><img src="images/carrinho.png"  class="imagem" > </a></li>
+              <li><a href="logout.html"><img src="images/profile1.png"  class="imagem" > </a> </li>       
+          </nav>
+           
+      </header>
+
+
+    <main>
+        <form>
+        <h2>Nome do Produto: <input type="text" id="produto"></h2>
+        <h2>Preço:<input placeholder="xxx fitcoins" type="text" id="preco"></h2>
+        <h2>Descrição:<textarea maxlength="500" id="Descricao"></textarea></h2>
+        <h2>Quantidade:</h2><input type="number" id="quantidade" step="1" min="0" max="100">
+        <h2>Categorias: <select id="categorias">
+                <option value="1">Dia-a-dia</option>
+                <option value="2">Corrida</option>
+                <option value="3">Reciclável</option>
+            </select></h2>
+
+        <h2><input type="button" value="Adicionar" onclick="addProduct()"></h2>
+    </form>
+    </main>
+</body>
+
+</html>

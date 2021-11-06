@@ -1,0 +1,80 @@
+body{
+    background-color: white ;
+}
+
+
+body >main {
+    display: flex;  
+    margin-top: 20px;
+    
+  }
+body > .interno{
+    margin-left: 30px;
+    width: 300px;
+    margin-top: 30px;
+    height: fit-content;
+    background: #d87c30;
+    padding: 10px 5px;
+    font-size: 20px;
+    font-family:Helvetica;
+    color: white;
+    text-align:  center;
+    
+}
+
+
+main{
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+}
+
+main > section{
+    border: 3px solid gray;
+    width: 200px;
+    padding: 11px 12px;
+    margin-top: 10px;
+    justify-items: center;
+    align-items: center;
+    height: fit-content;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 10%;
+    background-color: #E0E4EB;
+    
+}
+
+ main> section> h2{
+    text-align: center;
+    font-size: small;
+    margin-top: -20px;
+}
+
+ main >section >h1{
+    text-align: center;
+    color: black;
+}
+
+input[type=button]{
+    margin-left: 0px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #d87c30;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+}
+
+input[type=button]:hover{
+    background-color: orange;
+}
+
+.add_product{
+    float: right;
+    margin-right: 100px;
+    margin-top: -50px;
+    display: flex;
+}
+

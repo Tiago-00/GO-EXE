@@ -1,0 +1,46 @@
+<html>
+
+<head>
+  <title>Learning Platform</title>
+  <link rel="stylesheet" href="/stylesheets/index.css">
+  <link rel="stylesheet" href="/stylesheets/shop.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="javascripts/shop.js"></script>
+
+
+</head>
+
+
+<body>
+  <header>
+    <nav >
+      <a class="logo" href="/"><img src="images/logo1.png"  class="imagem1"> </a>
+      <label for="check">
+        <img src="images/menu.png">
+      </label> 
+      <input type="checkbox" id="check"> 
+     
+      <ul class="menu">
+          <li><a href="location.html">Mapa</a></li>
+          <li><a href="events.html">Eventos</a></li>
+          <li><a href="shop.html">Loja</a></li>
+          <li><a href="cart.html"><img src="images/carrinho.png"  class="imagem" > </a></li>
+          <li><a href="logout.html"><img src="images/profile1.png"  class="imagem" > </a> </li>       
+      </nav>
+       
+  </header>
+
+  <nav class="interno">
+    <p>Categorias: <select id="type" onchange="filter()"></select></p>
+  </nav>
+
+  <a href="addproduct.html" class="add_product"><input type="button" value="Adicionar produto" ></a>
+
+  <main id="cart">
+
+  </main>
+
+
+</body>
+
+</html>

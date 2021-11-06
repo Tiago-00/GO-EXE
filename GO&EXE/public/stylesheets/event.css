@@ -1,0 +1,68 @@
+body{
+    background-color: #e0e4eb ;
+}
+
+
+body >main {
+    display: flex;  
+    margin-top: 20px;
+    
+  }
+body > .modalidade{
+    margin-left: 30px;
+    width: 300px;
+    margin-top: 30px;
+    height: fit-content;
+    background: lightslategrey;
+    padding: 10px 5px;
+    font-size: 20px;
+    font-family:Helvetica;
+    color: white;
+    text-align:  center;
+    
+}
+
+
+main{
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+}
+
+main > section{
+    border: 3px solid gray;
+    width: 200px;
+    padding: 11px 12px;
+    margin-top: 10px;
+    justify-items: center;
+    align-items: center;
+    height: fit-content;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 10%;
+    background-color: bisque;
+    
+}
+
+ main> section> h2{
+    text-align: center;
+    font-size: small;
+    margin-top: -20px;
+}
+
+ main >section >h1{
+    text-align: center;
+    color: black;
+}
+
+
+#type{
+    width: 150px;
+    margin-left: 25px;
+    background-color:burlywood;
+    border-radius: 5%;
+    text-align: center ;
+    font-size: 15px;
+    font-family:Helvetica;
+    color: white;
+}
