@@ -1,0 +1,100 @@
+insert into TipoUtilizador(Tip_nome)values('utilizador');
+insert into TipoUtilizador(Tip_nome)values('personal trainer');
+
+
+
+insert into Utilizador(Use_nome,Use_email,Use_pass,Use_Tipo_ID)values('Pedro Costa','Pedr.Costa12@gmail.com','PedroCosta12',1);
+insert into Utilizador(Use_nome,Use_email,Use_pass,Use_Tipo_ID)values('Joana Silva','JoanaSiva2000@gmail.com','Joana12',1);
+insert into Utilizador(Use_nome,Use_email,Use_pass,Use_Tipo_ID)values('Bernado Bras','BernadoBras1994@gmail.com','BB1994',2);
+insert into Utilizador(Use_nome,Use_email,Use_pass,Use_Tipo_ID)values('Carlos Ramos','CarlosRamos@gmail.com','CarlosR123',2);
+insert into Utilizador(Use_nome,Use_email,Use_pass,Use_Tipo_ID)values('Sofia Silva','SofiaS1990@gmail.com','SofiS1990',2);
+insert into Utilizador(Use_nome,Use_email,Use_pass,Use_Tipo_ID)values('João Pedro','JoãoPedromod@gmail.com','JP1234',1);
+
+
+insert into TipoProdutos(Tip_produtos)values('Dia-a-dia');
+insert into TipoProdutos(Tip_produtos)values('Corrida');
+insert into TipoProdutos(Tip_produtos)values('Reciclável');
+
+
+insert into Produtos(Prod_nome,Prod_preco,Prod_descricao,Prod_quantidade, Prod_Tipo_Id)values('Camisola Preta','300 fitcoins','Feito com boa qualidade',6,1);
+insert into Produtos(Prod_nome,Prod_preco,Prod_descricao,Prod_quantidade, Prod_Tipo_Id)values('Tenis de corrida','450 fitcoins','Ótimos para desporto',10,2);
+insert into Produtos(Prod_nome,Prod_preco,Prod_descricao,Prod_quantidade, Prod_Tipo_Id)values('Garrafa de 1L','100 fitcoins','Garrafa reciclada',30,3);
+insert into Produtos(Prod_nome,Prod_preco,Prod_descricao,Prod_quantidade, Prod_Tipo_Id)values('Calções de corrida','250 fitcoins','Feitos com ótima qualidade',10,2);
+insert into Produtos(Prod_nome,Prod_preco,Prod_descricao,Prod_quantidade, Prod_Tipo_Id)values('T-shirt de corrida','250 fitcoins','Ótimas para desporto',25,2);
+insert into Produtos(Prod_nome,Prod_preco,Prod_descricao,Prod_quantidade, Prod_Tipo_Id)values('Calções Pretos','280 fitcoins','Feito com boa qualidade',12,1);
+
+
+insert into TipoEventos(Tip_Evento)values('Caminhada');
+insert into TipoEventos(Tip_Evento)values('Corrida');
+insert into TipoEventos(Tip_Evento)values('Yoga');
+insert into TipoEventos(Tip_Evento)values('Ciclismo');
+
+insert into Distritos(Distrit_nome)values('Lisboa');
+insert into Distritos(Distrit_nome)values('Porto');
+insert into Distritos(Distrit_nome)values('Setúbal');
+insert into Distritos(Distrit_nome)values('Braga');
+insert into Distritos(Distrit_nome)values('Aveiro');
+insert into Distritos(Distrit_nome)values('Faro');
+insert into Distritos(Distrit_nome)values('Leiria');
+insert into Distritos(Distrit_nome)values('Santarem');
+insert into Distritos(Distrit_nome)values('Coimbra');
+insert into Distritos(Distrit_nome)values('Viseu');
+insert into Distritos(Distrit_nome)values('Viana de Castelo');
+insert into Distritos(Distrit_nome)values('Vila Real');
+insert into Distritos(Distrit_nome)values('Castelo Branco');
+insert into Distritos(Distrit_nome)values('Évora');
+insert into Distritos(Distrit_nome)values('Beja');
+insert into Distritos(Distrit_nome)values('Guarda');
+insert into Distritos(Distrit_nome)values('Brangança');
+insert into Distritos(Distrit_nome)values('Portalegre');
+insert into Distritos(Distrit_nome)values('Madeira');
+insert into Distritos(Distrit_nome)values('Açores');
+
+
+
+insert into Eventos(Event_nome,Event_Tip_Id,Event_Dist_Id)values('Caminhada-lenta',1,1);
+insert into Eventos(Event_nome,Event_Tip_Id,Event_Dist_Id)values('Corrida de longa distância',2,9);
+insert into Eventos(Event_nome,Event_Tip_Id,Event_Dist_Id)values('Caminhada-lenta',1,2);
+insert into Eventos(Event_nome,Event_Tip_Id,Event_Dist_Id)values('Mountain Bike',4,1);
+insert into Eventos(Event_nome,Event_Tip_Id,Event_Dist_Id)values('Bmx',4,1);
+insert into Eventos(Event_nome,Event_Tip_Id,Event_Dist_Id)values('Caminhada-moderada',1,2);
+insert into Eventos(Event_nome,Event_Tip_Id,Event_Dist_Id)values('Caminhada-rápida',1,18);
+insert into Eventos(Event_nome,Event_Tip_Id,Event_Dist_Id)values('Corrida de média distância',2,17);
+insert into Eventos(Event_nome,Event_Tip_Id,Event_Dist_Id)values('Caminhada-moderada',1,10);
+insert into Eventos(Event_nome,Event_Tip_Id,Event_Dist_Id)values(' Hatha Yoga',3,8);
+insert into Eventos(Event_nome,Event_Tip_Id,Event_Dist_Id)values('Mountain Bike',4,18);
+insert into Eventos(Event_nome,Event_Tip_Id,Event_Dist_Id)values('Caminhada-lenta',1,2);
+insert into Eventos(Event_nome,Event_Tip_Id,Event_Dist_Id)values('Caminhada-lenta',1,10);
+insert into Eventos(Event_nome,Event_Tip_Id,Event_Dist_Id)values('Corrida de média distância',2,17);
+insert into Eventos(Event_nome,Event_Tip_Id,Event_Dist_Id)values('Caminhada-rápida',1,14);
+insert into Eventos(Event_nome,Event_Tip_Id,Event_Dist_Id)values(' BhaktiYoga',3,9);
+insert into Eventos(Event_nome,Event_Tip_Id,Event_Dist_Id)values('Mountain Bike',4,8);
+insert into Eventos(Event_nome,Event_Tip_Id,Event_Dist_Id)values('Caminhada-rápida',1,4);
+
+
+
+insert into UtilizadorEvento(UE_Id_U)values(3);
+insert into UtilizadorEvento(UE_Id_U)values(4);
+insert into UtilizadorEvento(UE_Id_U)values(5);
+insert into UtilizadorEvento(UE_Id_U)values(3);
+insert into UtilizadorEvento(UE_Id_U)values(3);
+insert into UtilizadorEvento(UE_Id_U)values(4);
+insert into UtilizadorEvento(UE_Id_U)values(3);
+insert into UtilizadorEvento(UE_Id_U)values(4);
+insert into UtilizadorEvento(UE_Id_U)values(5);
+insert into UtilizadorEvento(UE_Id_U)values(3);
+insert into UtilizadorEvento(UE_Id_U)values(3);
+insert into UtilizadorEvento(UE_Id_U)values(4);
+insert into UtilizadorEvento(UE_Id_U)values(3);
+insert into UtilizadorEvento(UE_Id_U)values(4);
+insert into UtilizadorEvento(UE_Id_U)values(5);
+insert into UtilizadorEvento(UE_Id_U)values(3);
+insert into UtilizadorEvento(UE_Id_U)values(3);
+insert into UtilizadorEvento(UE_Id_U)values(4);
+
+
+
+
+
+
+commit;

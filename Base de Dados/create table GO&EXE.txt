@@ -1,0 +1,77 @@
+create table Utilizador( ID_U serial, 
+					Use_nome varchar (20) not null, 
+                    Use_email varchar (30) not null,
+					Use_pass varchar (30) not null,
+                    Use_Tipo_ID int not null,
+					primary Key ( Id_U));
+	
+	
+create table TipoUtilizador( ID_T serial, 
+					Tip_nome varchar (20) not null,
+					primary Key (ID_T));
+
+
+create table Produtos (ID_P serial,
+					   Prod_nome varchar (20) not null,
+					   Prod_preco varchar (20) not null,
+					   Prod_descricao varchar (100) not null,
+					   Prod_quantidade int not null,
+					   Prod_Tipo_Id int not null,
+					   primary key (ID_P));
+		
+		
+create table TipoProdutos(ID_TP serial,
+						Tip_produtos varchar(50) not null,
+                        primary key(ID_TP));
+
+
+
+create table Eventos( ID_E serial,
+					  Event_nome varchar (100) not null,
+ 					 Event_Tip_Id int not null,
+					Event_Dist_Id int not null,
+					  primary key (ID_E));
+
+
+create table TipoEventos(ID_TE serial,
+						Tip_Evento varchar(50) not null,
+	       primary key(ID_TE));
+
+
+create table Distritos(ID_Dis serial,
+						Distrit_nome varchar(50) not null,
+  	      primary key(ID_Dis));
+		
+
+
+create table UtilizadorEvento( ID_UE serial,
+							    UE_Id_U int not null,
+							  	UE_Id_E serial,
+							    primary key (ID_UE));
+
+
+alter table Utilizador add constraint Utilizador_fk_TipoUtilizador
+			foreign key (Use_Tipo_ID) references TipoUtilizador(ID_T)
+            ON DELETE NO ACTION ON UPDATE NO ACTION;
+			
+
+alter table Produtos add constraint Produtos_fk_TipoProdutos
+			foreign key(Prod_Tipo_Id) references TipoProdutos(ID_TP)
+            ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+alter table Eventos add constraint Eventos_fk_TipoEventos
+			foreign key(Event_Tip_Id) references TipoEventos(ID_TE)
+            ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+alter table Eventos add constraint Eventos_fk_Distritos
+			foreign key(Event_Dist_Id) references Distritos(ID_Dis)
+            ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+
+alter table UtilizadorEvento add constraint UtilizadorEvento_fk_Eventos
+			foreign key (UE_Id_E) references Eventos(ID_E)
+            ON DELETE NO ACTION ON UPDATE NO ACTION;
+                             
+alter table UtilizadorEvento add constraint UtilizadorEvento_fk_Utilizador
+			foreign key (UE_Id_U) references Utilizador(ID_U)
+            ON DELETE NO ACTION ON UPDATE NO ACTION;  

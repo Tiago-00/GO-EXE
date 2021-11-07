@@ -1,0 +1,40 @@
+Select * from Distritos;
+
+/* devolve todos os distritos*/
+
+
+Select event_nome as evento 
+       From Eventos;
+
+/*devolve todos os eventos*/
+
+Select event_nome as evento 
+       From Eventos 
+       where event_tip_id = 2;
+		
+/*faz a filtragem do tipo de eventos por id*/
+
+
+Insert into eventos(event_nome,event_tip_id,event_dist_id) values("BMX_Difficult",4,1)";
+
+/* adicionar um evento */
+
+
+Select prod_nome as nome, prod_preco as preco, prod_descricao as descricao, prod_quantidade as quantidade 
+        From Produtos 
+        order by prod_preco asc;
+			
+/* devolve todos os produtos ordenados por preço*/
+
+
+Select  prod_nome as nome, prod_preco as preco, prod_descricao as descricao, prod_quantidade as quantidade 
+         From Produtos 
+         where Prod_Tipo_Id =1
+         order by prod_preco asc;
+		 
+/* faz uma filtragem pelo tipo de produto */
+
+
+Insert into produtos(prod_nome,prod_preco,prod_descricao,prod_quantidade,prod_tipo_id) values("bolsa preta","250 fitcoins","Produto com boa qualidade",14,3);
+
+/*adicionar um produto na loja*/
