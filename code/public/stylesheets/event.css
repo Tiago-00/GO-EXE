@@ -1,5 +1,5 @@
 body{
-    background-color: white;
+    background-color: white ;
 }
 
 
@@ -9,17 +9,16 @@ body >main {
     
   }
 body > .modalidade{
-    margin-left: 30px;
-    width: 300px;
-    margin-top: 30px;
-    height: fit-content;
-    background: #d87c30;
-    padding: 10px 5px;
-    font-size: 20px;
-    font-family:Helvetica;
-    color: white;
-    text-align:  center;
-    
+  margin-left: 30px;
+  width: 300px;
+  margin-top: 30px;
+  height: fit-content;
+  background: #d87c30;
+  padding: 10px 5px;
+  font-size: 20px;
+  font-family:Helvetica;
+  color: white;
+  text-align:  center;
 }
 
 
@@ -31,7 +30,7 @@ main{
 
 main > section{
     border: 3px solid gray;
-    width: 200px;
+    width: 250px;
     padding: 11px 12px;
     margin-top: 10px;
     justify-items: center;
@@ -40,32 +39,31 @@ main > section{
     margin-left: 20px;
     margin-right: 20px;
     border-radius: 10%;
-    background-color: #E0E4EB;
+    background-color: bisque;
     
 }
 
- main> section> h2{
+ main > section >h1{
     text-align: center;
-    font-size: small;
-    margin-top: -20px;
+    color: white;
 }
 
- main >section >h1{
-    text-align: center;
-    color: black;
+h2{
+    text-align: left;
+    color: white;
+    font-size: 16px;
+    margin-left: 10px;
 }
 
-
-#type{
-    width: 150px;
-    margin-left: 25px;
-    border-radius: 5%;
-    text-align: center ;
-    font-size: 15px;
-    font-family:Helvetica;
-    color: black;
-    cursor: pointer;
+.image {
+  background-color: #bbb;
+  color: white;
+  width: 280px;
+  height: 200px;
+  margin-top: -20px;
+  border-radius: 10%;
 }
+
 
 input[type=button]{
     margin-left: 0px;
@@ -78,16 +76,74 @@ input[type=button]{
     cursor: pointer;
     border: none;
     cursor: pointer;
+    margin-top: 40px;
 }
 
 input[type=button]:hover{
     background-color: orange;
 }
-
 #create { 
     visibility: hidden; 
 }
 
+
 #show_map { 
     visibility: hidden; 
 }
+
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+    padding: 10px 10px;
+    border-radius: 10%;
+    
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 10%;
+   
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+    border-radius: 10%;
+    
+  }
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 10%;
+  }
+  
+  .flip-card-front {
+    background-color: #bbb;
+    color: white;
+    font-size: 20px;
+  }
+  
+  .flip-card-back {
+    background-color: #2980b9;
+    color: white;
+    transform: rotateY(180deg);
+    width: 300px;
+    height:300px;
+    border-radius: 10%;
+    font-size: 20px;
+  
+  }
+
+
+

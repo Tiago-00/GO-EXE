@@ -2,50 +2,52 @@
 
 <head>
   <title>Go&Exe</title>
+
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-  crossorigin=""/>
- 
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-crossorigin=""></script>
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<link rel="stylesheet" href="/stylesheets/index.css">
-<link rel="stylesheet" href="/stylesheets/location.css">
-<script src="./javascripts/map.js"></script>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
 
-  
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="/stylesheets/index.css">
+  <link rel="stylesheet" href="/stylesheets/location.css">
+  <script src="./javascripts/map.js"></script>
+
 </head>
 
 
 <body>
   <header>
-    <nav >
-      <a class="logo" href="home.html"><img src="images/logo1.png"  class="imagem1"> </a>
+    <nav>
+      <a class="logo" href="home.html"><img src="images/logo1.png" class="imagem1"> </a>
       <label for="check">
         <img src="images/menu.png">
-      </label> 
-      <input type="checkbox" id="check"> 
-     
+      </label>
+      <input type="checkbox" id="check">
+
       <ul class="menu">
-        <li><a id="create" href="location.html">Mapa</a></li>      
-          <li><a href="events.html">Eventos</a></li>
-          <li><a href="shop.html">Loja</a></li>
-          <li><a href="cart.html"><img src="images/carrinho.png"  class="imagem" > </a></li>
-          <li><a href="perfil.html"><img src="images/profile1.png"  class="imagem" > </a> </li>       
-      </nav>
-       
+        <li><a id="create" href="location.html">Mapa</a></li>
+        <li><a href="events.html">Eventos</a></li>
+        <li><a href="shop.html">Loja</a></li>
+        <li><a href="cart.html"><img src="images/compras.png" class="imagem"> </a></li>
+        <li><a href="perfil.html"><img src="images/profile1.png" class="imagem"> </a> </li>
+    </nav>
+
   </header>
- 
- <main id="mapa"></main>
 
-<form id="criar"></form>
- 
- 
+  <main id="mapa"></main>
 
-  
-  
-  
+  <form id="criar"></form>
+
+
+
 </body>
+<p id = "status"></p>
+
 </html>

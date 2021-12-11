@@ -8,12 +8,10 @@ window.onload = async function() {
         });
       
         if(user.use_admin) {
-            var create_event = document.getElementById('create');
-            
+            var create_event = document.getElementById('create');     
             create_event.style.visibility = 'visible';
         }else{
             var show_map = document.getElementById('show_map');
-           
             show_map.style.visibility = 'visible';
         }
     }catch (err) {
@@ -34,7 +32,7 @@ async function addProduct() {
 
         }
 
-        console.log(JSON.stringify(products));
+    
         let result = await $.ajax({
             url: "/api/produtos",
             method: "post",

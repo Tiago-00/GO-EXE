@@ -10,11 +10,13 @@ body>header {
 }
 
 
+
 body>main {
     grid-area: m;
     height: 720px;
-
+    
 }
+
 
 
 form {
@@ -23,26 +25,39 @@ form {
     border-radius: 5px;
     width: 500px;
     margin: 50px;
-    padding: 50px;
+    padding: 60px;
     background-color: #f6f7f8;
+   
+}
 
+h2 {
+    display: block;
+    margin-top: -5px;
+    font-weight: bold;
+}
+
+
+
+#logo_2{
+    
+    width: 80px;
 }
 
 select{
-            margin-bottom: 20px;
-            padding: 8px;
+			margin-bottom: 20px;
+			padding: 8px;
             text-align: center;
-        }
+		}
 
 textarea{
-            height: 100px;
-            margin-top: 7px;
-            margin-bottom: 10px;
-            padding: 7px;
-            resize: none;
-            font-size: 14px;
-            font-family: Helvetica, Arial, sans-serif;
-        }
+			height: 100px;
+			margin-top: 7px;
+			margin-bottom: 10px;
+			padding: 7px;
+			resize: none;
+			font-size: 14px;
+			font-family: Helvetica, Arial, sans-serif;
+		}
 
 
 input[type=text], input[type=number]{
@@ -53,6 +68,7 @@ input[type=text], input[type=number], select, textarea{
     border: #d6d9dc solid 1px;
     border-radius: 5px;
     width: 100%;
+    
 }
 
 input[type=text]:focus, input[type=number]:focus, select:focus, textarea:focus{
@@ -61,6 +77,23 @@ input[type=text]:focus, input[type=number]:focus, select:focus, textarea:focus{
 }
 
 input[type=button]{
+    margin-left: 60px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: orange;
+    border-radius: 5px;
+    padding: 10px 40px;
+    cursor: pointer;
+    border: none;
+    margin-top: 55px;
+}
+
+input[type=button]:hover{
+    background-color: bisque;
+}
+
+input[type=button].adicionar{
     margin-left: 165px;
     font-size: 16px;
     font-weight: bold;
@@ -70,17 +103,35 @@ input[type=button]{
     padding: 10px 40px;
     cursor: pointer;
     border: none;
+    margin-top: 55px;
 }
 
-input[type=button]:hover{
+input[type=button].adicionar:hover{
     background-color: bisque;
 }
 
 
 #create { 
     visibility: hidden; 
+    
 }
 
 #show_map { 
     visibility: hidden; 
+    width: 100%;
+    
+}
+
+
+#map{
+   
+        position: absolute;
+        top:0;
+        bottom:0;
+        right:0;
+        left:0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        color: #323232;
+      
 }

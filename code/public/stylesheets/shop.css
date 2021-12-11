@@ -1,14 +1,15 @@
+
 body{
     background-color: white ;
-}
-
-
-body >main {
+  }
+  
+  
+  body >main {
     display: flex;  
     margin-top: 20px;
     
   }
-body > .interno{
+  body > .interno{
     margin-left: 30px;
     width: 300px;
     margin-top: 30px;
@@ -20,18 +21,24 @@ body > .interno{
     color: white;
     text-align:  center;
     
-}
-
-
-main{
+  }
+  
+  .add_product{
+    float: right;
+    margin-right: 150px;
+    margin-top: -100px;
+    flex-wrap: wrap;
+  }
+  
+  main{
     display: flex;
     justify-content: left;
     flex-wrap: wrap;
-}
-
-main > section{
+  }
+  
+  main > section{
     border: 3px solid gray;
-    width: 200px;
+    width: 250px;
     padding: 11px 12px;
     margin-top: 10px;
     justify-items: center;
@@ -40,26 +47,23 @@ main > section{
     margin-left: 20px;
     margin-right: 20px;
     border-radius: 10%;
-    background-color: #E0E4EB;
+    background-color: bisque;
     
-}
-
-#type{
-    cursor: pointer;
-}
-
- main> section> h2{
+  }
+  
+  main > section >h1{
     text-align: center;
-    font-size: small;
-    margin-top: -20px;
-}
-
- main >section >h1{
-    text-align: center;
-    color: black;
-}
-
-input[type=button]{
+    color: white;
+  }
+  
+  h2{
+    text-align: left;
+    color: white;
+    font-size: 16px;
+    margin-left: 10px;
+  }
+  
+  input[type=button]{
     margin-left: 0px;
     font-size: 16px;
     font-weight: bold;
@@ -70,27 +74,79 @@ input[type=button]{
     cursor: pointer;
     border: none;
     cursor: pointer;
-}
-
-input[type=button]:hover{
+    margin-top: 40px;
+  }
+  
+  input[type=button]:hover{
     background-color: orange;
-}
-
-.add_product{
-    float: right;
-    margin-right: 150px;
-    margin-top: -60px;
-    flex-wrap: wrap;
-}
-
-#create { 
+  }
+  #create { 
     visibility: hidden; 
-}
-
-#show_map { 
+  }
+  
+  
+  #show_map { 
     visibility: hidden; 
-}
-
-#create_1 { 
-    visibility: hidden; 
-}
+  }
+  
+  .flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+    padding: 10px 10px;
+    border-radius: 10%;
+    
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 10%;
+   
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+    border-radius: 10%;
+    
+  }
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 10%;
+  }
+  
+  .flip-card-front {
+    background-color: #bbb;
+    color: white;
+    font-size: 20px;
+  }
+  
+  .image {
+    background-color: #bbb;
+    color: white;
+    max-width:100%;
+    max-height: 70%;
+    margin-top: -20px;
+  }
+  
+  .flip-card-back {
+    background-color: #2980b9;
+    color: white;
+    transform: rotateY(180deg);
+    width: 300px;
+    height:300px;
+    border-radius: 10%;
+    font-size: 20px;
+  
+  }

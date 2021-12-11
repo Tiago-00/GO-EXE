@@ -1,9 +1,20 @@
 var mymap;
 
-var cities = L.layerGroup();
 var popup = L.popup();
 var coordenadas;
 
+var eventId = sessionStorage.getItem("eventx");
+var eventIdy = sessionStorage.getItem("eventy");
+
+
+var redIcon = new L.Icon({
+    iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+  });
 
 window.onload = async function () {
     try {
@@ -29,11 +40,8 @@ window.onload = async function () {
               <option value="3">Yoga</option>
               <option value="4">Ciclismo</option>
           </select></h2>
-
             <h2>Nome da atividade: <input type="text" id="atividade"></h2>
-            
-          
-            <h2><input type="button" value="Adicionar" onclick="addEvent()"></h2>
+            <h2><input type="button" class="adicionar" value="Adicionar" onclick="addEvent()"></h2>
           </form>`
             document.getElementById("criar").innerHTML = html;
 
@@ -44,24 +52,29 @@ window.onload = async function () {
                     .openOn(mymap);
 
                 coordenadas = "" + e.latlng.lat + "," + e.latlng.lng; /*guarda*/
-                console.log(coordenadas);
                 
-
-                for (let event of events) {
-                    var marker = L.marker([event.event_coordenadas.x, event.event_coordenadas.y]).addTo(mymap);
-                    var container = $('<div />');
-                    container.on('click', function () {
-                        alert("test");
-                    });
-                    container.html("<h2>" + event.event_local + "</h2>" +
-                        "Nome da atividade: " + event.event_nome + "<br><br>");
-                    marker.bindPopup(container[0]);
-                }
+                 
             }
 
         } else {
             var show_map = document.getElementById('create');
             show_map.style.visibility = 'visible';
+            let html = "";
+            html += `<form>
+            <img  id="logo_2" src=images/treino.png>
+            <h2>Locais de Treino </h2>
+            <p>Explora o teu país, ou o local onde estás de momento e fica a saber as tuas possibilidades de exercício que tem para oferecer.</p>  
+            
+            <img id="logo_2" src=images/Personal.png>
+            <h2>Personal Trainers</h2>
+            <p>Tens objetivos de fitness ambiciosos? 
+            Poderás inscrever-te num evento e ter a possibilidade de treinares com um PT, numa lista de profissionais selecionados pela equipa GO&EXE.</p>
+
+            <img id="logo_2" src=images/Pontos.png>
+            <h2>Pontos E Benefícios</h2>
+            <p>No GO&EXE, toda a tua atividade vale pontos. Quando és consistente e desafias-te, ganhas pontos que podes trocar na loja GO&EXE.</p>
+          </form>`
+            document.getElementById("criar").innerHTML = html;       
         }
     } catch (err) {
         console.log(err);
@@ -89,18 +102,35 @@ window.onload = async function () {
 
     for (let event of events) {
         var marker = L.marker([event.event_coordenadas.x, event.event_coordenadas.y]).addTo(mymap);
-        var container = $('<div />');
-        container.on('click', function () {
-            alert("test");
-        });
-
+        var container = $('<section />');
         container.html("<h2>" + event.event_local + "</h2>" +
             "Nome da atividade: " + event.event_nome + "<br><br>" +
-            "<input type='button'  value='Inscrever'></input>");
+            "<a href=events.html ><input type='button'  value='Ver nos Eventos'></input></a>");
         marker.bindPopup(container[0]);
+}
 
+    if (eventId && eventIdy) {
+        const status = document.querySelector('#status');
+        function success(position) {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+            L.Routing.control({
+                waypoints: [
+                   L.latLng(latitude, longitude),
+                    L.latLng(eventId,eventIdy)
+                ],
+               
+              }).addTo(mymap);
+              
+              newMarker = L.marker([latitude, longitude],{icon: redIcon}).addTo(mymap);
+       
+        }
+        navigator.geolocation.getCurrentPosition(success, error);
+
+        function error() {
+            status.textContent = 'Unable to retrieve your location';
+        }       
     }
-
 }
 
 async function addEvent() {
@@ -114,7 +144,7 @@ async function addEvent() {
             event_coordenadas: coordenadas
         }
 
-        console.log(JSON.stringify(events));
+      
         let result = await $.ajax({
             url: "/api/eventos",
             method: "post",
@@ -122,6 +152,13 @@ async function addEvent() {
             data: JSON.stringify(events),
             contentType: "application/json"
         });
+
+        let event_types = await $.ajax({
+            url: '/api/tipoeventos',
+            method: 'get',
+            dataType: 'json'
+        });
+        
         alert("Evento adicionado")
         window.location = "events.html";
     } catch (err) {
