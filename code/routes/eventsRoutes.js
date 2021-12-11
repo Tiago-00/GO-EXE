@@ -22,4 +22,28 @@ router.post("/", async function (req, res, next) {
 });
 
 
+router.post("/adduserevent", async function (req, res, next) {
+    let adduserevent = req.body;
+    console.log(adduserevent);
+    let result = await eProd.AddUserEvent(adduserevent);
+    res.status(result.status).send(result.result);
+});
+
+
+router.get('/:id', async function(req, res, next) {
+    let id = req.params.id;
+    console.log("Sending event with id "+id);
+    let result = await eProd.getEventById(id);
+    res.status(result.status).send(result.result);
+  });
+
+  router.get('/:id/count', async function(req, res, next) {
+    let id = req.params.id;
+    console.log(id);
+    let result = await eProd.getCountUsers(id);
+    res.status(result.status).send(result.result);
+  });
+
+
+
 module.exports = router;

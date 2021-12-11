@@ -1,28 +1,3 @@
-window.onload = async function() {
-    try {
-        let userId = sessionStorage.getItem("userId");
-        let user = await $.ajax({
-            url: `/api/users/${userId}`,
-            method: "get",
-            dataType: "json"
-        });
-      
-        if(user.use_admin) {
-            var create_event = document.getElementById('create');
-            
-            create_event.style.visibility = 'visible';
-        }else{
-            var show_map = document.getElementById('show_map');
-           
-            show_map.style.visibility = 'visible';
-        }
-    }catch (err) {
-        console.log(err);
-    }
-
-}
-
-
 async function login() {
     try {
         let obj = {
@@ -37,9 +12,8 @@ async function login() {
             contentType: 'application/json'
         });
         sessionStorage.setItem("userId",user.id_u);
+        sessionStorage.setItem("userAdmin",user.use_admin);
         window.location = "home.html";
-
-
     } catch (err) {
         document.getElementById("msg").innerText = err.responseJSON.msg;
     }
