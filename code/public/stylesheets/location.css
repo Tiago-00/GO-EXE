@@ -75,3 +75,12 @@ input[type=button]{
 input[type=button]:hover{
     background-color: bisque;
 }
+
+
+#create { 
+    visibility: hidden; 
+}
+
+#show_map { 
+    visibility: hidden; 
+}

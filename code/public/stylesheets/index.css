@@ -231,3 +231,15 @@ label img{
 
   
 }
+
+#create { 
+  visibility: hidden; 
+}
+
+#show_map { 
+  visibility: hidden; 
+}
+
+#create_1 {
+   visibility: hidden; 
+  }

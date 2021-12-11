@@ -83,3 +83,14 @@ input[type=button]:hover{
     flex-wrap: wrap;
 }
 
+#create { 
+    visibility: hidden; 
+}
+
+#show_map { 
+    visibility: hidden; 
+}
+
+#create_1 { 
+    visibility: hidden; 
+}

@@ -1,3 +1,27 @@
+window.onload = async function() {
+    try {
+        let userId = sessionStorage.getItem("userId");
+        let user = await $.ajax({
+            url: `/api/users/${userId}`,
+            method: "get",
+            dataType: "json"
+        });
+      
+        if(user.use_admin) {
+            var create_event = document.getElementById('create');
+            
+            create_event.style.visibility = 'visible';
+        }else{
+            var show_map = document.getElementById('show_map');
+           
+            show_map.style.visibility = 'visible';
+        }
+    }catch (err) {
+        console.log(err);
+    }
+
+}
+
 async function addProduct() {
     try {
         let products = {

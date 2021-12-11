@@ -1,5 +1,25 @@
-window.onload = async function () {
-
+window.onload = async function() {
+    try {
+        let userId = sessionStorage.getItem("userId");
+        let user = await $.ajax({
+            url: `/api/users/${userId}`,
+            method: "get",
+            dataType: "json"
+        });
+      
+        if(user.use_admin) {
+            var create;
+            var create_event = document.getElementById('create'); 
+            create = document.getElementById('create_1');   
+            create_event.style.visibility = 'visible';
+            create.style.visibility ='visible';
+        }else{
+            var show_map = document.getElementById('create');          
+            show_map.style.visibility = 'visible';
+        }
+    }catch (err) {
+        console.log(err);
+    }
     try {
         let produtos = await $.ajax({
             url: '/api/produtos',
@@ -22,8 +42,8 @@ window.onload = async function () {
     } catch (err) {
         console.log(err);
     }
-}
 
+}
 
 function createProductsHTML(produtos) {
     let html = "";

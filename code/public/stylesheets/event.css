@@ -83,3 +83,11 @@ input[type=button]{
 input[type=button]:hover{
     background-color: orange;
 }
+
+#create { 
+    visibility: hidden; 
+}
+
+#show_map { 
+    visibility: hidden; 
+}

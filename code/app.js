@@ -9,7 +9,9 @@ var produtosRouter = require('./routes/produtosRoutes');
 var tipoprodutos = require('./routes/TipoProdutosRoutes');
 var eventsRouter = require('./routes/eventsRoutes');
 var tipoeventos = require('./routes/TipoEventosRoutes');
-var distritoRouter = require('./routes/DistritoRoutes');
+var userRouter = require('./routes/userRoutes');
+
+
 
 var app = express();
 
@@ -25,6 +27,7 @@ app.use('/api/produtos',produtosRouter);
 app.use('/api/tipoprodutos', tipoprodutos);
 app.use('/api/eventos',eventsRouter);
 app.use('/api/tipoeventos', tipoeventos);
-app.use('/api/distritos',distritoRouter);
+app.use('/api/users',userRouter);
+
 
 module.exports = app;

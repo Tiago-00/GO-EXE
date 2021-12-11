@@ -58,10 +58,10 @@ module.exports.SaveProduct = async function (prod) {
     try {
         let sql = "Insert into produtos(prod_nome,prod_preco,prod_descricao,prod_quantidade,prod_tipo_id) values($1,$2,$3,$4,$5)";
         let result = await pool.query(sql, [prod.prod_nome, prod.prod_preco, prod.prod_descricao, prod.prod_quantidade, prod.prod_tipo_id]);
-        let produto = result.rows;
+        let events = result.rows;
         return {
             status: 200,
-            result: produto
+            result: events
         };
     } catch (err) {
         console.log(err);
